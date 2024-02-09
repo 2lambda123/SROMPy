@@ -39,9 +39,8 @@ srom_results = numpy.zeros(srom_size)
 (srom_samples, srom_probabilities) = input_srom.get_params()
 
 # TODO: define model here.
-model = None
 
-if model is None:
+if (model := None) is None:
     raise ValueError("model has not been defined.")
 
 for i, sample in enumerate(srom_samples):
