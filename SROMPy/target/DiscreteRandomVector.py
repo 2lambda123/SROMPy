@@ -91,9 +91,8 @@ class DiscreteRandomVector(RandomVector):
             x_grid = np.repeat(x_grid, self._dim, axis=1)
 
         # Check if we've computed/stored cdf values for this x_grid:
-        cache_flag = self._is_cdf_cached(x_grid)
 
-        if cache_flag:
+        if cache_flag := self._is_cdf_cached(x_grid):
             return self._cdf_cache
         else:
 
