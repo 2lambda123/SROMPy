@@ -24,6 +24,20 @@ class DiscreteRandomVector(RandomVector):
     """
 
     def __init__(self, samples, probabilities, max_moment=10):
+        """Initialize the class object with given samples and probabilities, and set maximum moment to 10 by default.
+        Parameters:
+            - samples (ndarray): Array of samples.
+            - probabilities (ndarray): Array of probabilities.
+            - max_moment (int): Maximum moment to be set, default is 10.
+        Returns:
+            - None
+        Processing Logic:
+            - Reshape samples if it is 1D.
+            - Validate inputs.
+            - Set member variables.
+            - Precompute moments and correlation matrix.
+            - Initialize cache variables."""
+        
 
         # Check for 1D case (random variable).
         if len(samples.shape) == 1:
